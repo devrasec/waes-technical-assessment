@@ -37,7 +37,7 @@ export interface ChangeTextAction {
   payload: string;
 }
 
-export type FilterState = { [K in Colors]: boolean };
+export type FilterState = import('../types').Filters;
 
 export interface ToggleFilterAction {
   type: typeof TOGGLE_FILTER;

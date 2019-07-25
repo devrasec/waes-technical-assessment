@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { setHighlightColor as setHighlightColorAction } from '../redux/modules/highlightColor';
-import highlightIcon from '../assets/icons/round-highlight.svg';
 import { Button } from './Button';
+import { HighlightIcon } from './HighlightIcon';
 import styles from './HighlightColorSelector.module.css';
 
 type HighlightColorSelectorProps = {
@@ -22,7 +22,7 @@ export const HighlightColorSelector = ({
         color="RED"
         onClick={() => setHighlightColor('RED')}
       >
-        <img src={highlightIcon} alt="highlight icon" />
+        <HighlightIcon />
       </Button>
 
       <Button
@@ -30,7 +30,7 @@ export const HighlightColorSelector = ({
         color="YELLOW"
         onClick={() => setHighlightColor('YELLOW')}
       >
-        <img src={highlightIcon} alt="highlight icon" />
+        <HighlightIcon />
       </Button>
 
       <Button
@@ -38,7 +38,7 @@ export const HighlightColorSelector = ({
         color="GREEN"
         onClick={() => setHighlightColor('GREEN')}
       >
-        <img src={highlightIcon} alt="highlight icon" />
+        <HighlightIcon />
       </Button>
     </div>
   );

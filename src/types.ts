@@ -8,7 +8,7 @@ export type HighlightText = {
   color: Colors;
 };
 export type HighlightTextArray = Array<HighlightText>;
-
+export type Filters = { [K in Colors]: boolean };
 export interface Highlight {
   id: HighlightId;
   selectionRange: Range;
