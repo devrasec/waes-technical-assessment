@@ -9,16 +9,15 @@ type ButtonProps = {
   active?: boolean;
 };
 
-const getClassName = (color: Colors) => {
-  if (color === 'RED') return styles.buttonRed;
-  if (color === 'YELLOW') return styles.buttonYellow;
-  if (color === 'GREEN') return styles.buttonGreen;
-  return styles.button;
+const colorMap: { [K in Colors]: string } = {
+  RED: styles.buttonRed,
+  YELLOW: styles.buttonYellow,
+  GREEN: styles.buttonGreen,
 };
 
 export const Button = ({ color, onClick, children, active }: ButtonProps) => (
   <button
-    className={`${getClassName(color)} ${active ? styles.active : ''}`}
+    className={`${colorMap[color]} ${active ? styles.active : ''}`}
     onClick={onClick}
   >
     {children}
