@@ -14,6 +14,8 @@
   appearance: none;
   border-bottom-width: 6px;
   border-bottom-style: solid;
+  outline: none;
+  transition: all 0.5s;
 }
 
 .button:hover,
@@ -21,8 +23,7 @@
   background: #f1f1f1;
 }
 
-.button:focus {
-  outline: none;
+.button:focus:not(.active) {
   box-shadow: 0 0 2px 2px #d1d1d1;
 }
 
