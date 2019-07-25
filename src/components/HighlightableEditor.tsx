@@ -26,6 +26,7 @@ type HighlightableEditorProps = {
   removeHighlight: typeof removeHighlightAction;
   changeText: typeof changeTextAction;
   changeHighlight: typeof changeHighlightAction;
+  highlightColor: import('../types').Colors;
 };
 
 const applyHighlightsToText = (
@@ -44,7 +45,10 @@ const applyHighlightsToText = (
       );
 
       const selectionText = (
-        <mark key={selection.id} style={{ backgroundColor: 'yellow' }}>
+        <mark
+          key={selection.id}
+          style={{ backgroundColor: selection.color.toLowerCase() }}
+        >
           {_text.slice(
             selection.selectionRange.start,
             selection.selectionRange.end
@@ -77,6 +81,7 @@ export const HighlightableEditor = ({
   text,
   changeText,
   changeHighlight,
+  highlightColor,
 }: HighlightableEditorProps) => {
   const editorRef = useRef<HTMLTextAreaElement>(null);
   const backdropRef = useRef<HTMLDivElement>(null);
@@ -112,7 +117,7 @@ export const HighlightableEditor = ({
     addHighlight({
       id: nanoid(),
       selectionRange,
-      color: 'RED',
+      color: highlightColor,
     });
   };
 
@@ -159,6 +164,7 @@ export const HighlightableEditor = ({
 const mapStateToProps = (state: import('../redux/modules').AppState) => ({
   highlights: state.highlights,
   text: state.text,
+  highlightColor: state.highlightColor,
 });
 
 export default connect(

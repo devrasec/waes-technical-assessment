@@ -1,0 +1,45 @@
+.button {
+  display: inline-block;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  text-decoration: none;
+  background: transparent;
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  appearance: none;
+  border-bottom-width: 6px;
+  border-bottom-style: solid;
+}
+
+.button:hover,
+.button:focus {
+  background: #f1f1f1;
+}
+
+.button:active {
+  transform: scale(0.99);
+}
+
+.buttonRed {
+  composes: button;
+  border-color: red;
+}
+
+.buttonYellow {
+  composes: button;
+  border-color: yellow;
+}
+
+.buttonGreen {
+  composes: button;
+  border-color: green;
+}
+
+.active {
+  background: #eeeeee;
+}
