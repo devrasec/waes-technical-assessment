@@ -22,12 +22,12 @@ export const FilterableHighlights = ({
   return (
     <div style={{ marginTop: '1rem' }}>
       <h3>Highlights</h3>
-      {hasHighlights && <p>Filter your highlights using the buttons below.</p>}
+      <p>Filter your highlights using the buttons below.</p>
       <Filters filters={filters} onFilterClick={toggleFilter} />
       {hasHighlights ? (
         <HighlightList highlights={filteredHighlights} />
       ) : (
-        <p>You don't have highlights yet.</p>
+        <p>You don't have highlights with the colors selected.</p>
       )}
     </div>
   );
