@@ -1,0 +1,22 @@
+.mark {
+  border-radius: 3px;
+}
+
+.highlight {
+  color: transparent;
+}
+
+.red {
+  composes: mark;
+  background-color: red;
+}
+
+.yellow {
+  composes: mark;
+  background-color: yellow;
+}
+
+.green {
+  composes: mark;
+  background-color: green;
+}

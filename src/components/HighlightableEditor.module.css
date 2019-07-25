@@ -46,7 +46,7 @@
   position: absolute;
   z-index: 2;
   margin: 0;
-  border: 2px solid red;
+  border: 2px solid #04baee;
   border-radius: 0;
   color: #444444;
   background-color: transparent;
@@ -56,5 +56,5 @@
 
 .editor:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #444444;
+  box-shadow: 1px 1px 5px 1px #cccccc;
 }

@@ -16,6 +16,7 @@ import {
 } from '../redux/modules/highlights';
 import { changeText as changeTextAction } from '../redux/modules/text';
 import { areRangesEquals, doRangesOverlap, indexOfFirstDiff } from '../utils';
+import { Mark } from './Mark';
 
 type Highlight = import('../types').Highlight;
 
@@ -45,15 +46,15 @@ const applyHighlightsToText = (
       );
 
       const selectionText = (
-        <mark
+        <Mark
           key={selection.id}
-          style={{ backgroundColor: selection.color.toLowerCase() }}
-        >
-          {_text.slice(
+          text={_text.slice(
             selection.selectionRange.start,
             selection.selectionRange.end
           )}
-        </mark>
+          color={selection.color}
+          highlightOnly
+        />
       );
 
       let outputParts = acc.concat([textBeforeSelection, selectionText]);
