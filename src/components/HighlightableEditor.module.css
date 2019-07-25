@@ -1,0 +1,61 @@
+.container,
+.backdrop,
+.editor {
+  width: 100%;
+  max-width: 800px;
+  height: 200px;
+}
+
+.highlights,
+.editor {
+  padding: 10px;
+  font-family: 'PT Sans', sans-serif;
+  letter-spacing: 1px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.container {
+  display: block;
+  margin: 0 auto;
+  transform: translateZ(0);
+  text-size-adjust: none;
+}
+
+.backdrop {
+  position: absolute;
+  z-index: 1;
+  border: 2px solid #444444;
+  background-color: #ffffff;
+  overflow: auto;
+  pointer-events: none;
+}
+
+.highlights {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  color: transparent;
+}
+
+.highlights mark {
+  border-radius: 3px;
+  color: transparent;
+}
+
+.editor {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  margin: 0;
+  border: 2px solid red;
+  border-radius: 0;
+  color: #444444;
+  background-color: transparent;
+  overflow: auto;
+  resize: none;
+}
+
+.editor:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #444444;
+}
