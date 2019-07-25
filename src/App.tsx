@@ -3,7 +3,7 @@ import React from 'react';
 import './App.css';
 import HighlightableEditor from './components/HighlightableEditor';
 import HighlightColorSelector from './components/HighlightColorSelector';
-import HighlightList from './components/HighlightList';
+import FilterableHighlights from './components/FilterableHighlights';
 
 const App: React.FC = () => {
   return (
@@ -11,7 +11,7 @@ const App: React.FC = () => {
       <h1>WAES Frontend challenge</h1>
       <HighlightColorSelector />
       <HighlightableEditor />
-      <HighlightList />
+      <FilterableHighlights />
     </>
   );
 };

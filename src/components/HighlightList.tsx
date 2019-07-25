@@ -1,15 +1,13 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
 import { Mark } from './Mark';
 import styles from './HighlightList.module.css';
 
 type HighlightListProps = {
-  highlights: Array<import('../types').Highlight>;
-  text: string;
+  highlights: import('../types').HighlightTextArray;
 };
 
-export const HighlightList = ({ highlights, text }: HighlightListProps) => {
+export const HighlightList = ({ highlights }: HighlightListProps) => {
   const hasHighlights = highlights.length > 0;
 
   return (
@@ -21,13 +19,7 @@ export const HighlightList = ({ highlights, text }: HighlightListProps) => {
           <ul className={styles.highlightList}>
             {highlights.map(highlight => (
               <li key={highlight.id} className={styles.highlight}>
-                <Mark
-                  color={highlight.color}
-                  text={text.slice(
-                    highlight.selectionRange.start,
-                    highlight.selectionRange.end
-                  )}
-                />
+                <Mark color={highlight.color} text={highlight.text} />
               </li>
             ))}
           </ul>
@@ -38,10 +30,3 @@ export const HighlightList = ({ highlights, text }: HighlightListProps) => {
     </div>
   );
 };
-
-const mapStateToProps = (state: import('../redux/modules').AppState) => ({
-  highlights: state.highlights,
-  text: state.text,
-});
-
-export default connect(mapStateToProps)(HighlightList);
