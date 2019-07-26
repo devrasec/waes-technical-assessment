@@ -10,6 +10,7 @@ type MarkProps = {
   highlightOnly?: boolean;
 };
 
+// Mapping correct styles to Colors values.
 const colorMap: { [K in Colors]: string } = {
   RED: styles.red,
   YELLOW: styles.yellow,
@@ -18,6 +19,7 @@ const colorMap: { [K in Colors]: string } = {
 
 export const Mark = ({ text, color, highlightOnly }: MarkProps) => (
   <mark
+    data-testid="mark-tag"
     className={`${colorMap[color]} ${highlightOnly ? styles.highlight : ''}`}
   >
     {text}
