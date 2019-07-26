@@ -17,6 +17,7 @@ const colorMap: { [K in Colors]: string } = {
 
 export const Button = ({ color, onClick, children, active }: ButtonProps) => (
   <button
+    data-testid="button"
     className={`${colorMap[color]} ${active ? styles.active : ''}`}
     onClick={onClick}
   >
