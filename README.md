@@ -2,7 +2,7 @@
 
 Go here [https://devrasec-waes-test.netlify.com/](https://devrasec-waes-test.netlify.com/) to see this in action!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), then you can see how to run the project below.
 
 ## Available Scripts
 
