@@ -5,7 +5,7 @@ import { Mark } from '../Mark';
 const text = 'Hello world!';
 const regexpText = /^Hello world!$/;
 
-test('renders red highlight with transparent text', () => {
+test('should render red highlight with transparent text', () => {
   const { getByTestId } = render(
     <Mark text={text} color="RED" highlightOnly />
   );
@@ -14,7 +14,7 @@ test('renders red highlight with transparent text', () => {
   expect(mark).toHaveTextContent(regexpText);
 });
 
-test('renders yellow highlight with visible text', () => {
+test('should render yellow highlighted text', () => {
   const { getByTestId } = render(<Mark text={text} color="YELLOW" />);
   const mark = getByTestId('mark-tag');
   expect(mark).not.toHaveClass('highlight');

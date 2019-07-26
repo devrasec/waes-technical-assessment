@@ -11,7 +11,11 @@ export const HighlightList = ({ highlights }: HighlightListProps) => {
   return (
     <ul className={styles.highlightList}>
       {highlights.map(highlight => (
-        <li key={highlight.id} className={styles.highlight}>
+        <li
+          data-testid="highlight-list-item"
+          key={highlight.id}
+          className={styles.highlight}
+        >
           <Mark color={highlight.color} text={highlight.text} />
         </li>
       ))}
